@@ -2,13 +2,9 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
-from flask_ngrok import run_with_ngrok
 
 # creating the flask object
 app = Flask(__name__)
-
-#making your Flask app available upon running
-run_with_ngrok(app)
 
 #loading the model
 model = pickle.load(open('model.pkl', 'rb'))
